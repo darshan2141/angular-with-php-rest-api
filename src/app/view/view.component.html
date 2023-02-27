@@ -1,0 +1,43 @@
+<div class="d-flex align-items-center my-3">
+    <input placeholder="Search By id" class="form-control srInput" type="text" (input)="search($event)">
+</div>
+<table class="table table-stripped">
+    <thead class="bg-primary">
+        <th>Sr. No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>phone</th>
+        <th>Country</th>
+        <th>Actions</th>
+    </thead>
+
+    <tbody *ngIf="isList">
+        <tr *ngFor="let student of students;let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.last_name}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.phone}}</td>
+            <td>{{student.country}}</td>
+            <td> <a  class="btn btn-success me-3" (click)="update(student.id)">EDIT</a> <button
+                    (click)="deleteStudent(student.id)" class="btn btn-info"> Delete</button> </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="!isList">
+        <tr>
+            <td>{{1}}</td>
+            <td>{{students?.name}}</td>
+            <td>{{students?.last_name}}</td>
+            <td>{{students?.email}}</td>
+            <td>{{students?.gender}}</td>
+            <td>{{students?.phone}}</td>
+            <td>{{students?.country}}</td>
+            <td> <a (click)="update(students.id)" class="btn btn-success">EDIT</a> <button
+                    (click)="deleteStudent(students)" class="btn btn-info"> Delete</button> </td>
+        </tr>
+    </tbody>
+
+</table>

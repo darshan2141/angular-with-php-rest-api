@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/angular-php-crud",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
