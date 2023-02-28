@@ -15,22 +15,29 @@ export class StudentsService {
   getStudents() {
     // return this.http.get<Students[]>(this.baseUrl + 'view.php');
     // return this.http.get<Students[]>(this.baseUrl + 'display.php');
-    return this.http.get('http://localhost/phpapi/read.php');
+    return this.http.get('http://phpcrud.darshan2141.epizy.com/read.php');
   }
 
   addStudents(data: any) {
-    return this.http.post('http://localhost/phpapi/create.php', data);
+    return this.http.post('http://phpcrud.darshan2141.epizy.com/add.php', data);
   }
 
   searchStudents(id: any) {
-    return this.http.get(`http://localhost/phpapi/read.php?id=${id}`);
+    return this.http.get(
+      `http://phpcrud.darshan2141.epizy.com/read.php?id=${id}`
+    );
   }
 
   updateStudents(id: any, data: any): Observable<any> {
-    return this.http.put(`http://localhost/phpapi/update.php?id=${id}`, data);
+    return this.http.put(
+      `http://phpcrud.darshan2141.epizy.com/update.php?id=${id}`,
+      data
+    );
   }
-  
-  deleteStudents(id:any){
-    return this.http.delete(`http://localhost/phpapi/delete.php?id=${id}`);
+
+  deleteStudents(id: any) {
+    return this.http.delete(
+      `http://phpcrud.darshan2141.epizy.com/delete.php?id=${id}`
+    );
   }
 }
